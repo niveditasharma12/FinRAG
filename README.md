@@ -9,6 +9,96 @@ A production-grade RAG system that answers questions over SEC 10-K/10-Q filings,
 
 ---
 
+## Demo
+
+<!-- Replace these with actual screenshots. Capture with: -->
+<!-- 1. Run the app: streamlit run app_streamlit.py -->
+<!-- 2. Take screenshots of each query example below -->
+<!-- 3. Save as images/demo-simple.png, images/demo-comparison.png, etc. -->
+
+### Simple Query
+
+<!-- ![Simple Query Demo](images/demo-simple.png) -->
+
+```
+Query: "What is Apple's R&D spending?"
+```
+
+**Result:**
+```
+Query Type:    SIMPLE
+Sources:       6 chunks
+Response Time: 15.3s
+
+Answer:
+Apple's research and development expense (R&D spending) reported in the filings is:
+
+* 2022: $26,251 million
+* 2021: $21,914 million
+* 2020: $18,752 million
+
+These figures appear in the 2022 Form 10-K under "Research and development expense"
+for each year.
+```
+
+---
+
+### Multi-Hop Comparison Query
+
+<!-- ![Multi-Hop Query Demo](images/demo-comparison.png) -->
+
+```
+Query: "How does Apple's R&D spending compare to Microsoft's R&D spending?"
+```
+
+**Result:**
+```
+Query Type:    COMPARISON
+Sub-Questions: 2
+Sources:       12 chunks
+Response Time: 31.3s
+
+Sub-Question 1: "What is Apple's R&D spending?"
+→ Apple invested $29.9B in R&D in 2023...
+
+Sub-Question 2: "What is Microsoft's R&D spending?"
+→ Microsoft spent $27.2B on R&D in 2023...
+
+Answer:
+Apple's R&D spending was $29.9B (7.6% of revenue) while Microsoft
+spent $27.2B (12.8% of revenue). Microsoft invests a higher percentage
+of revenue in R&D despite lower absolute spending.
+```
+
+---
+
+### Streamlit UI Demo
+
+<!-- ![Streamlit UI](images/demo-ui.png) -->
+
+The Streamlit frontend provides:
+
+| Feature | Description |
+|---------|-------------|
+| Query Input | Text field with search button |
+| Progress Indicators | Real-time status during query |
+| Results Display | Answer with metrics and citations |
+| Query History | Track previous queries |
+| Architecture Diagram | Interactive system visualization |
+
+**Start the UI:**
+```bash
+# Terminal 1: Backend
+uvicorn src.app:app --host 0.0.0.0 --port 8000
+
+# Terminal 2: Frontend
+streamlit run app_streamlit.py
+```
+
+Open http://localhost:8501
+
+---
+
 ## Key Features
 
 | Feature | Description |
@@ -143,6 +233,40 @@ curl -X POST http://localhost:8000/query \
   -H "Content-Type: application/json" \
   -d '{"question": "What is Apple'\''s R&D spending?"}'
 ```
+
+---
+
+## Taking Screenshots for README
+
+To add your own screenshots:
+
+```bash
+# 1. Start the app
+uvicorn src.app:app --host 0.0.0.0 --port 8000 &
+streamlit run app_streamlit.py
+
+# 2. Open http://localhost:8501
+
+# 3. Take screenshots of:
+#    - Simple query result
+#    - Multi-hop query with sub-questions
+#    - Architecture diagram tab
+#    - Query history
+
+# 4. Save screenshots to images/ folder:
+mkdir images
+# Save as: images/demo-simple.png, images/demo-comparison.png, etc.
+
+# 5. Uncomment the image lines in README.md
+```
+
+### Screenshot Checklist
+
+- [ ] Simple query input and result
+- [ ] Multi-hop query with decomposition
+- [ ] Architecture diagram (fully visible)
+- [ ] Query history panel
+- [ ] About section with expandable components
 
 ---
 
