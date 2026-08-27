@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+data/raw_filings/
+data/index/
+.env
+server.log\nstreamlit.log\nuvicorn.log\nbuild_index.log\nresponse.json

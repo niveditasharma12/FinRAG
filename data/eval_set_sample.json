@@ -1,0 +1,18 @@
+[
+  {
+    "question": "What was Apple's total net revenue in its most recent fiscal year filing?",
+    "ground_truth": "Fill in with the actual figure from the AAPL 10-K you indexed, e.g. '$383.3 billion'."
+  },
+  {
+    "question": "What does Apple identify as its primary risk factors related to supply chain?",
+    "ground_truth": "Fill in based on the Risk Factors section of the indexed 10-K."
+  },
+  {
+    "question": "How did R&D spending as a percentage of revenue compare between Apple and Microsoft in the most recent fiscal year?",
+    "ground_truth": "Fill in by computing from both companies' indexed 10-Ks — this is a comparison-type question."
+  },
+  {
+    "question": "Which of Apple's disclosed legal proceedings are also referenced in its risk factors?",
+    "ground_truth": "Fill in — this is a multi-hop question requiring cross-referencing two sections."
+  }
+]
