@@ -408,10 +408,4 @@ This measures faithfulness, relevancy, and precision metrics.
 
 ---
 
-## License
 
-MIT License
-
----
-
-Built with ❤️ for financial research
