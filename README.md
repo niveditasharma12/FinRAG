@@ -236,37 +236,25 @@ curl -X POST http://localhost:8000/query \
 
 ---
 
-## Taking Screenshots for README
+## Taking Screenshots for READM
+### Simple query input and result
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a87e6495-6e08-41f4-8c85-34e06b901889" />
 
-To add your own screenshots:
+### Multi-hop query with decomposition
 
-```bash
-# 1. Start the app
-uvicorn src.app:app --host 0.0.0.0 --port 8000 &
-streamlit run app_streamlit.py
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5f7c297d-7bd5-4e46-8084-75a881e4a5c2" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dfb624ba-c84b-4ccb-a6e9-c4a3f0027a06" />
 
-# 2. Open http://localhost:8501
 
-# 3. Take screenshots of:
-#    - Simple query result
-#    - Multi-hop query with sub-questions
-#    - Architecture diagram tab
-#    - Query history
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cd204ed0-e75c-444d-ada0-46c1b278de39" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/45f353f9-7c86-4e23-b571-4cfb83cd5763" />
 
-# 4. Save screenshots to images/ folder:
-mkdir images
-# Save as: images/demo-simple.png, images/demo-comparison.png, etc.
+### Architecture diagram (fully visible)
+<img width="1402" height="812" alt="image" src="https://github.com/user-attachments/assets/1f7f6123-6206-4d72-b08e-8303e685b753" />
+<img width="1435" height="335" alt="image" src="https://github.com/user-attachments/assets/d30abb11-4986-41e6-89c2-93412cdbdecd" />
 
-# 5. Uncomment the image lines in README.md
-```
-
-### Screenshot Checklist
-
-- [ ] Simple query input and result
-- [ ] Multi-hop query with decomposition
-- [ ] Architecture diagram (fully visible)
-- [ ] Query history panel
-- [ ] About section with expandable components
+### Query history panel
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f90550d3-20ac-4a75-9d35-1ac3ace93133" />
 
 ---
 
